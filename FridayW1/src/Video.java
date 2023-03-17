@@ -1,6 +1,14 @@
 
-public class Video implements Playble,Shwoble {
+public class Video extends ElementoMultimediale implements Playble,Shwoble {
 
+	Video(){
+		super("Video");
+	}
+	
+	Video(String title) {
+		super("Video",title);
+		// TODO Auto-generated constructor stub
+	}
 	private int volume;
 	private int durata;
 	private int luminosità;
