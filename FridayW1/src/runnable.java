@@ -5,8 +5,14 @@ public class runnable {
 	 static Scanner scanner= new Scanner(System.in);
 	
 	
-	private static void insideSwtich(String type) {
+	private static String insideSwtich(String type) {
 		System.out.println("OTTIMO"+" Hai Scelto "+ type);
+		System.out.println("Scegli un titolo / il resto dei parametri sarà default per semplicità");
+		String responseSwitch = scanner.nextLine();
+		return responseSwitch;
+		 
+		
+
 		//System.out.println("Vuoi inserire un titolo?/Altrimenti tutti i parametri saranno default");
 		//System.out.println("Y/N");
 		
@@ -19,46 +25,60 @@ public class runnable {
 	final public static int LUNGHEZZA=5;
 	 public static void main(String[] args) {
 		 boolean finish=false;
+		 int y=0; int n=0;
+		 String name="";
+		 
+		 
 		
 		 ElementoMultimediale[] arrayElements=new ElementoMultimediale[LUNGHEZZA];
 	     	System.out.println("//Regole:");
 	     	System.out.println("Si puo dichiarare un audio con titolo,durata e volume con i parametri rigorosamente in questo oridne");
 	     	System.out.println("Si puo omettere uno o piu, o tutti i  parametri, il sistema le prenderà di default");
 	        
-	     	for(int i=0;i<arrayElements.length;i++) {
+	     while(y<5) {
 	     		
-	     		System.out.println("Elemento numero :"+(i+1)+"   Cosa Vuoi Scannerizzare?");
+	     		System.out.println("Elemento numero :"+(y+1)+"   Cosa Vuoi Scannerizzare?");
 	     		System.out.println("Scegli tra audio,video,immagine");
 	     		String response= scanner.nextLine().toUpperCase();
 	     		 
 	     		switch(response) {
 	     		  case "AUDIO":
-	     			  insideSwtich("AudioReg");
-	     			  arrayElements[i]= new AudioReg();
+	     			  name=insideSwtich("AudioReg");
+	     			 
+	     			  arrayElements[y]= new AudioReg(name);
+	     		
+	     			 
 	     			  System.out.println("Done");
+	     			  y=y+1;
 	     			  
 	     		    break;
 	     		  case "IMMAGINE":
-	     			  insideSwtich("Image");
-	     			  arrayElements[i]= new Image();
+ 
+	     			  name=insideSwtich("Image");
+	     			  arrayElements[y]= new Image(name);
+	     			  y=y+1;
 	     			 break;
 	     		  case "VIDEO":
-	     			  insideSwtich("Video");
-	     			  arrayElements[i]=new Video();
+	     			  name=insideSwtich("Video");
+	     			  arrayElements[y]=new Video(name);
+	     			  y=y+1;
+	     			  break;
 	     			 
 	     		  default:
-	     		    // code block
+	     		    System.out.println("HAI SCRITTO MALE RIPROVA");
 	     		}
 	     		
-	     		while(finish==false) {
-	     			System.out.println("quale Elemento vuoi vedere?");
-	     			response=scanner.nextLine();
-	     			switch(response) {
-	     			case "1":
-	     			break;
-	     			}
+	     		
 	     			
 	     		}
+	     	while(finish==false) {
+     			System.out.println("quale Elemento vuoi vedere?/pigiare 100 per finire");
+     			 n = Integer.parseInt(scanner.nextLine());
+     			 if(n==100) {
+     				 finish=true;
+     			 } else {
+     			 arrayElements[n].show}
+     			
 	     	}
 	 
 	       

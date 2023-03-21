@@ -10,47 +10,60 @@ public class Video extends ElementoMultimediale implements Playble,Shwoble {
 		// TODO Auto-generated constructor stub
 	}
 	private int volume;
-	private int durata;
+	private int life;
 	private int luminosità;
+	
 	
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
+		this.play();
 		
 	}
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
+		for(int i=0;i<life;i++) {
+			System.out.print(i+1);
+			
+			System.out.print(" ");
+			for(int j=0;j<volume;j++) {
+			System.out.print("!");
+			}
+			
+			for(int k=0;i<luminosità;i++) {
+			System.out.print("*");
+
+			}
+			printTitle();
+		}
 		
 	}
 	@Override
 	public void increaseLuminosità() {
-		// TODO Auto-generated method stub
+		luminosità=luminosità+1;
 		
 	}
 	@Override
 	public void reduceLuminosità() {
-		// TODO Auto-generated method stub
+		luminosità=luminosità-1;
 		
 	}
 	@Override
 	public void setLuminosità(int Luminosità) {
-		// TODO Auto-generated method stub
+		this.luminosità=Luminosità;
 		
 	}
 	@Override
 	public void increaseVolume() {
-		// TODO Auto-generated method stub
+		volume=volume+1;
 		
 	}
 	@Override
 	public void reduceVolume() {
-		// TODO Auto-generated method stub
+		volume=volume-1;
 		
 	}
 	@Override
 	public void setVolume(int volume) {
-		// TODO Auto-generated method stub
-		
+		this.volume=volume;		
 	}
 }
