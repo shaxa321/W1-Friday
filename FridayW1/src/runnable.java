@@ -72,16 +72,27 @@ public class runnable {
 	     			
 	     		}
 	     	while(finish==false) {
-     			System.out.println("quale Elemento vuoi vedere?/pigiare 100 per finire");
+     			System.out.println("quale Elemento vuoi vedere?/pigiare 0 per finire");
      			 n = Integer.parseInt(scanner.nextLine());
-     			 if(n==100) {
+     			 if(n==0) {
      				 finish=true;
-     			 } else {
-     			 arrayElements[n].show}
+     				 break;
+     			 }
+     				 else {
+     					 n=n-1;
+     					 if (arrayElements[n] instanceof Image) ((Image) arrayElements[n]).show();
+         				 else if (arrayElements[n] instanceof AudioReg) ((AudioReg) arrayElements[n]).play();
+         				else if (arrayElements[n] instanceof Video) ((Video) arrayElements[n]).play();
+     				 }
+     					
+     			 
+     			 
+     			 } 
+     			
      			
 	     	}
 	 
 	       
 	    }
 	 
-}
+

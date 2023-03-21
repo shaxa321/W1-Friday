@@ -29,7 +29,7 @@ public class Video extends ElementoMultimediale implements Playble,Shwoble {
 			System.out.print("!");
 			}
 			
-			for(int k=0;i<luminosità;i++) {
+			for(int k=0;k<luminosità;k++) {
 			System.out.print("*");
 
 			}
